@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+ "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="com.projectManagement.User" table="USER">
+		<id name="userId" type="int" column="USER_ID" >
+			<generator class="assigned"/>
+		</id>
+		<property name="userName">
+			<column name="USERNAME" />
+		</property>
+		<property name="emailId">
+			<column name="EMAIL_ID"/>
+		</property>
+		<property name="password">
+			<column name="PASSWORD"/>
+		</property>
+	</class>
+</hibernate-mapping>
