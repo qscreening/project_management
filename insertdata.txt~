@@ -1,6 +1,0 @@
-INSERT INTO USERS VALUES (1,'priyanka','priya.siddana@gmail.com','priyanka');
-INSERT INTO USERS VALUES (2,'chaitanya','chaitanya.eluru@gmail.com','chaitanya');
-INSERT INTO USERS VALUES (3,'kartheek','kartheek.chilvery@gmail.com','kartheek');
-INSERT INTO USERS VALUES (4,'surya','surya.prakash@gmail.com','surya');
-INSERT INTO USERS VALUES (5,'anjali','anjali@gmail.com','anjali');
-INSERT INTO USERS VALUES (6,'pradeep','pradeep@gmail.com','pradeep');
