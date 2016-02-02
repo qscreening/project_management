@@ -1,3 +1,5 @@
+import javax.persistence.*;
+
 @Entity
 @Table(name = "PROJECT_MEMBERS")
 public class Project {

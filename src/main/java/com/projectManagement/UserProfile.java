@@ -1,3 +1,5 @@
+import javax.persistence.*;
+
 @Entity
 @Table(name = "USER_PROFILES")
 public class UserProfile {
