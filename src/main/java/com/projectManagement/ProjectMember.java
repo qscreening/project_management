@@ -36,7 +36,7 @@ public class ProjectMember {
       		return owner;
    	}
 
-   	public void setOwner( int owner ) {
+   	public void setOwner( boolean owner ) {
       		this.owner = owner;
    	}
 	
