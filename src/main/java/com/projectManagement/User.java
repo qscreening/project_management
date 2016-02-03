@@ -7,8 +7,8 @@ import javax.persistence.*;
 public class User {
    	
 	@Id @GeneratedValue
-	/*@OneToOne(mappedBy="user")
-    	private UserProfile userprofile;*/	
+	@OneToOne(mappedBy="user")
+    	private UserProfile userprofile;	
   	@Column(name = "USER_ID")
   	private int userId;
    	@Column(name = "USER_NAME")
