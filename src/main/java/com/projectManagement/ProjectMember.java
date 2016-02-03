@@ -1,8 +1,10 @@
 package com.projectManagement;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
-@Entity
+@Embeddable
 @Table(name = "PROJECT_MEMBERS")
 public class ProjectMember {
    	
@@ -11,9 +13,7 @@ public class ProjectMember {
   	private int id;	
 	@OneToMany
     	@JoinColumn(name = "PROJECT_ID")
-	private Project project;	
-	/*@Column(name = "PROJECT_ID")
-	private int projectId;*/
+	private Set<Project> project;	
 	@Column(name = "MEMBER_ID")
 	private int memberId;
 	@OneToOne

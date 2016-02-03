@@ -2,7 +2,7 @@ package com.projectManagement;
 
 import javax.persistence.*;
 
-@Entity
+@Embeddable
 @Table(name = "PROJECTS")
 public class Project {
    	

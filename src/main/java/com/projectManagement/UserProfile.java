@@ -2,11 +2,10 @@ package com.projectManagement;
 
 import javax.persistence.*;
 
-@Entity
+@Embeddable
 @Table(name = "USER_PROFILES")
 public class UserProfile {
    	
-	//@Id @GeneratedValue
 	@OneToOne
     	@JoinColumn(name = "USER_ID")
 	private User user;
