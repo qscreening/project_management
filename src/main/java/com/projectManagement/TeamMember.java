@@ -1,5 +1,7 @@
 package com.projectManagement;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 @Entity
@@ -11,7 +13,7 @@ public class TeamMember {
   	private int id;	
 	@OneToMany
     	@JoinColumn(name = "TEAM_ID")
-	private Team team;	
+	private Set<Team> team;	
 	@Column(name = "MEMBER_ID")
 	private int memberId;
 	@OneToOne
