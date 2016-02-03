@@ -12,14 +12,12 @@ import org.hibernate.Query;
 @RestController
 public class Project_managementController {
 	@RequestMapping("/projectmanagement")
-	public List management() {
-		Session session = HibernateSessionManager.getSessionFactory().openSession();
-		session.beginTransaction();
-		Query query = session.createQuery("from USERS");
-		List users = query.list();
-		session.save(users);
-		session.getTransaction().commit();
-		return users;
+	public void management() {
+		UserDao users = new UserDao();
+		List list = users.getListOfUsers();
+/*		request.setAttribute("user", list);
+		request.getRequestDispatcher("table.jsp").forward(request, response);
+*/		System.out.println(list);
 	}
 }
 

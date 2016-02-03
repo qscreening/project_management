@@ -6,9 +6,9 @@ import javax.persistence.*;
 @Table(name = "USER_PROFILES")
 public class UserProfile {
    	
-	@OneToOne
-    	@JoinColumn(name = "USER_ID")
-	private User user;
+	//@OneToOne
+    	//@JoinColumn(name = "USER_ID")
+	//private User user;
 	@Column(name = "PHONE_NUMBER")
 	private int phoneNumber;
 
