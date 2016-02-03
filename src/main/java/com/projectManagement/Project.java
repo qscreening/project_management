@@ -1,3 +1,5 @@
+package com.projectManagement;
+
 import javax.persistence.*;
 
 @Entity
