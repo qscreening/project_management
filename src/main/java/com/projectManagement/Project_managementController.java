@@ -11,7 +11,7 @@ import org.hibernate.Query;
 
 @RestController
 public class Project_managementController {
-	@RequestMapping("/project_managementController")
+	@RequestMapping("/project")
 	public List management() {
 		Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();

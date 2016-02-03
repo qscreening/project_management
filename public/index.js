@@ -3,7 +3,7 @@ $(document).ready(function() {
 });
 
 function searchViaAjax() {
-	$.ajax({url: "project_managementController", success: function(result){
+	$.ajax({url: "projectmanagement", success: function(result){
 		console.log(result);
 	}});
 }
