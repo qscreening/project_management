@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "TEAMS")
-public class Teams {
+public class Team {
    	
 	@Id @GeneratedValue
 	@Column(name = "TEAM_ID")
@@ -18,7 +18,7 @@ public class Teams {
 	private User user;
 
 	public int getTeamId() {
-      		return teamtId;
+      		return teamId;
    	}
    	
 	public void setTeamId( int teamId ) {

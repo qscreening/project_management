@@ -33,7 +33,7 @@ public class TeamMember {
    	}
 
    	public void setOwner( boolean teamLeader ) {
-      		this.owner = teamLeader;
+      		this.teamLeader = teamLeader;
    	}
 
 }
