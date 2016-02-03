@@ -8,12 +8,9 @@ public class UserProfile {
 	@OneToOne
     	@JoinColumn(name = "USER_ID")
 	private User user;
-	
 	@Column(name = "PHONE_NUMBER")
 	private int phoneNumber;
 
-	
-	
 	public int getPhoneNumber() {
       		return phoneNumber;
    	}

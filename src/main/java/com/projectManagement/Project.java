@@ -5,13 +5,10 @@ import javax.persistence.*;
 public class Project {
    	
 	@Id @GeneratedValue
-  	
 	@Column(name = "PROJECT_ID")
   	private int projectId;	
-	
 	@Column(name = "PROJECT_NAME")
 	private String projectName;
-	
 	@Column(name = "OWNER")
 	private int owner;
 	@OneToOne

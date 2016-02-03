@@ -7,13 +7,11 @@ public class ProjectMember {
 	@Id @GeneratedValue
   	@Column(name = "ID")
   	private int id;	
-	
 	@Column(name = "MEMBER_ID")
 	private int memberId;
 	@OneToOne
     	@JoinColumn(name = "USER_ID")
 	private User user;
-	
 	@OneToMany
     	@JoinColumn(name = "PROJECT_ID")
 	private Project project;	
