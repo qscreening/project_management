@@ -13,7 +13,7 @@ public class Team {
 	private String teamName;
 	@Column(name = "TEAM_LEADER")
 	private int teamLeader;
-//	@OneToOne
+	@OneToOne
     	@JoinColumn(name = "USER_ID")
 	private User user;
 

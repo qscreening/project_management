@@ -10,7 +10,7 @@ import org.hibernate.Query;
 public class UserDao{
 
 	public List<User> getListOfUsers(){
-	        List<User> list = new ArrayList<User>();
+		List<User> list = new ArrayList<User>();
 	
 	        Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
