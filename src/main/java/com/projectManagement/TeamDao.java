@@ -10,25 +10,25 @@ import org.hibernate.Query;
 public class TeamDao{
 
 	public List<Team> getListOfTeams(){
-	        List<Team> list = new ArrayList<Team>();
+		List<Team> list = new ArrayList<Team>();
 	
-	        Session session = HibernateSessionManager.getSessionFactory().openSession();
+		Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
 	
 	        Transaction tx = null;       
 	        try {
-	            tx = session.getTransaction();
-	            tx.begin();
-	            list = (List<Team>) session.createQuery("from team").list();
-		    session.save(list);
-	            tx.commit();
+			tx = session.getTransaction();
+			tx.begin();
+			list = (List<Team>) session.createQuery("from team").list();
+			session.save(list);
+			tx.commit();
 	        } catch (Exception e) {
-	            if (tx != null) {
-	                tx.rollback();
-	            }
-	            e.printStackTrace();
+`			if (tx != null) {
+				tx.rollback();
+			}
+			e.printStackTrace();
 	        } finally {
-	            session.close();
+			session.close();
 	        }
 	        return list;
 	}

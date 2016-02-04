@@ -17,18 +17,18 @@ public class UserDao{
 	
 	        Transaction tx = null;       
 	        try {
-	            tx = session.getTransaction();
-	            tx.begin();
-	            list = (List<User>) session.createQuery("from User").list();
-		    session.save(list);
-	            tx.commit();
+			tx = session.getTransaction();
+			tx.begin();
+			list = (List<User>) session.createQuery("from User").list();
+			session.save(list);
+			tx.commit();
 	        } catch (Exception e) {
-	            if (tx != null) {
-	                tx.rollback();
-	            }
-	            e.printStackTrace();
+			if (tx != null) {
+				tx.rollback();
+			}
+			e.printStackTrace();
 	        } finally {
-	            session.close();
+			session.close();
 	        }
 	        return list;
 	}

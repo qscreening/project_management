@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class TeamMemberController {
-	@RequestMapping("/teamMemberController")
+	@RequestMapping("/TeamMemberController")
 	public List<TeamMember> management() {
-		TeamDao teams = new TeamDao();
-		List list = teams.getListOfTeams();
+		TeamMemberDao members = new TeamMemberDao();
+		List list = members.getListOfTeamMembers();
 		System.out.println(list);
 		return list;
 	}
