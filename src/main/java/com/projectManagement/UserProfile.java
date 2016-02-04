@@ -1,23 +1,25 @@
 package com.projectManagement;
 
+import java.io.Serializable;
+
 import javax.persistence.*;
 
-@Embeddable
+@Entity
 @Table(name = "USER_PROFILES")
-public class UserProfile {
+public class UserProfile implements Serializable {
    	
 	//@OneToOne
     	//@JoinColumn(name = "USER_ID")
 	//private User user;
+	@Id
 	@Column(name = "PHONE_NUMBER")
-	private int phoneNumber;
+	private long phoneNumber;
 
-	public int getPhoneNumber() {
+	public long getPhoneNumber() {
       		return phoneNumber;
    	}
    	
-	public void setPhoneNumber( int phoneNumber ) {
+	public void setPhoneNumber( long phoneNumber ) {
       		this.phoneNumber = phoneNumber;
    	}
-
 }

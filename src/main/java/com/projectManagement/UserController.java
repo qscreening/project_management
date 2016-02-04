@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class Project_managementController {
-	@RequestMapping("/projectmanagement")
+public class UserController {
+	@RequestMapping("/UserController")
 	public List<User> management() {
 		UserDao users = new UserDao();
 		List list = users.getListOfUsers();
