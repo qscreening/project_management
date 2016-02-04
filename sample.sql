@@ -52,10 +52,6 @@ INSERT INTO USER_PROFILES(USER_ID, PHONE_NUMBER) VALUES
 	
 INSERT INTO PROJECTS(PROJECT_NAME, OWNER) VALUES
 	('project_management', '3'),
-	('project_management', '3'),
-	('project_management', '3'),
-	('social_network', '4'),
-	('social_network', '4'),
 	('social_network', '4');
 
 INSERT INTO PROJECT_MEMBERS(PROJECT_ID, MEMBER_ID, OWNER) VALUES
