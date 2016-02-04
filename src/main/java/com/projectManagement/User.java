@@ -1,12 +1,10 @@
 package com.projectManagement;
 
-import java.io.Serializable;
-
 import javax.persistence.*;
 
 @Entity
 @Table(name = "USERS")
-public class User implements Serializable {
+public class User {
    	
 	@Id @GeneratedValue
 	//@OneToOne(mappedBy="user")
