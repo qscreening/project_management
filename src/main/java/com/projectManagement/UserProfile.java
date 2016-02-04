@@ -12,8 +12,17 @@ public class UserProfile implements Serializable {
     	//@JoinColumn(name = "USER_ID")
 	//private User user;
 	@Id
+	@Column(name = "USER_ID")
+	private int userId;
 	@Column(name = "PHONE_NUMBER")
 	private long phoneNumber;
+	
+	public int getUserId(){
+	   	return userId;
+	}
+	public void setUserId( int userId ) {
+		this.userId = userId;
+	}		
 
 	public long getPhoneNumber() {
       		return phoneNumber;
