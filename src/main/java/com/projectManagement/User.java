@@ -20,6 +20,17 @@ public class User implements Serializable {
 	@Column(name = "PASSWORD")
 	private String password;
 
+	public 	User() {
+ 
+    	}
+ 
+    	public User(int userId, String userName, String emailId, String password) {
+        	this.userId = userId;
+        	this.userName = userName;
+        	this.emailId = emailId;
+        	this.password = password;
+    	}
+
    	public int getUserId() {
       		return userId;
    	}
