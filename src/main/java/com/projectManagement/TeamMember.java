@@ -22,6 +22,16 @@ public class TeamMember {
 	@Column(name = "TEAM_LEADER")
 	private boolean teamLeader;
 
+	public 	TeamMember() {
+ 
+    	}
+ 
+    	public TeamMember(int id, int memberId, boolean teamLeder) {
+        	this.id = id;
+        	this.memberId = memberId;
+        	this.teamLeader = teamLeader;
+    	}
+
 	public int getId() {
       		return id;
    	}
