@@ -12,11 +12,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class TeamController {
-	@RequestMapping("/TeamController")
-	public List<User> management() {
-		TeamDao teams = new TeamDao();
-		List list = teams.getListOfTeams();
+public class TeamMemberController {
+	@RequestMapping("/TeamMemberController")
+	public List<TeamMember> management() {
+		TeamMemberDao members = new TeamMemberDao();
+		List list = members.getListOfTeamMembers();
 		System.out.println(list);
 		return list;
 	}

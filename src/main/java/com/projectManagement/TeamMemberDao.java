@@ -7,23 +7,23 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;  
 import org.hibernate.Query;
 
-public class TeamDao{
+public class TeamMemberDao{
 
-	public List<Team> getListOfTeams(){
-		List<Team> list = new ArrayList<Team>();
+	public List<TeamMember> getListOfTeamMembers(){
+		List<TeamMember> list = new ArrayList<TeamMember>();
 	
-		Session session = HibernateSessionManager.getSessionFactory().openSession();
+	        Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
 	
 	        Transaction tx = null;       
 	        try {
 			tx = session.getTransaction();
 			tx.begin();
-			list = (List<Team>) session.createQuery("from team").list();
+			list = (List<TeamMember>) session.createQuery("from TeamMember").list();
 			session.save(list);
 			tx.commit();
 	        } catch (Exception e) {
-`			if (tx != null) {
+			if (tx != null) {
 				tx.rollback();
 			}
 			e.printStackTrace();
