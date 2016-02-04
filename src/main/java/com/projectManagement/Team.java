@@ -13,9 +13,19 @@ public class Team {
 	private String teamName;
 	@Column(name = "TEAM_LEADER")
 	private int teamLeader;
-	@OneToOne
+//	@OneToOne
     	@JoinColumn(name = "USER_ID")
 	private User user;
+
+	public 	Team() {
+ 
+    	}
+ 
+    	public Team(int teamId, String teamName, int teamLeader) {
+        	this.teamId = teamId;
+        	this.teamName = teamName;
+        	this.teamLeader = teamLeader;
+    	}
 
 	public int getTeamId() {
       		return teamId;
