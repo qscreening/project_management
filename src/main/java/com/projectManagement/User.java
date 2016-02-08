@@ -8,13 +8,14 @@ import javax.persistence.*;
 @Table(name = "USERS")
 public class User implements Serializable {
    	
-	@Id @GeneratedValue	
-  	@Column(name = "USER_ID")
-  	private int userId;
-	@OneToOne(mappedBy="user")
-    	private UserProfile userprofile;
-   	@Column(name = "USER_NAME")
-  	private String userName;	
+	@Id 
+	@GeneratedValue
+	@Column(name = "ID")
+	private int id;
+	@OneToOne(mappedBy = "UserProfile")
+	private UserProfile userProfile = new UserProfile();
+	@Column(name = "USER_NAME")
+	private String userName;	
 	@Column(name = "EMAIL_ID")
 	private String emailId;
 	@Column(name = "PASSWORD")
@@ -22,22 +23,31 @@ public class User implements Serializable {
 
 	public 	User() {
  
-    	}
+	}
  
-    	public User(int userId, String userName, String emailId, String password) {
-        	this.userId = userId;
-        	this.userName = userName;
-        	this.emailId = emailId;
-        	this.password = password;
+	public User(int id, String userName, String emailId, String password, UserProfile userProfile) {
+		this.id = id;
+		this.userName = userName;
+		this.emailId = emailId;
+		this.password = password;
+		this.userProfile = userProfile;
     	}
 
-   	public int getUserId() {
-      		return userId;
-   	}
+	public void setUserProfile(UserProfile userProfile) {
+		this.userProfile = userProfile;
+	}
 
-   	public void setUserId( int userId ) {
-      		this.userId = userId;
-   	}
+	public UserProfile getUserProfile() {
+		return userProfile;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+   	public void setId( int id ) {
+		this.id = id;
+	}
 
 	public String getUserName() {
 		return userName;
