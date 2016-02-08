@@ -15,7 +15,7 @@ public class UserProfile implements Serializable {
 	@Column(name = "PHONE_NUMBER")
 	private long phoneNumber;
 
-	@OneToOne
+	@OneToOne(fetch = FetchType.LAZY)
     	@PrimaryKeyJoinColumn
     	private User user;
 

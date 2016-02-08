@@ -64,6 +64,14 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}	
+	}
+	
+	public UserProfile getUserProfile() {
+		return userProfile;
+	}
 
+	public void setUserProfile(UserProfile userProfile) {
+		this.userProfile = userProfile;
+	}
+		
 }
