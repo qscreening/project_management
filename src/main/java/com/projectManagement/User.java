@@ -33,20 +33,20 @@ public class User implements Serializable {
 		this.userProfile = userProfile;
     	}
 
-	public void setUserProfile(UserProfile userProfile) {
-		this.userProfile = userProfile;
-	}
-
-	public UserProfile getUserProfile() {
-		return userProfile;
-	}
-
 	public int getId() {
 		return id;
 	}
 
    	public void setId( int id ) {
 		this.id = id;
+	}
+
+	public void setUserProfile(UserProfile userProfile) {
+		this.userProfile = userProfile;
+	}
+
+	public UserProfile getUserProfile() {
+		return userProfile;
 	}
 
 	public String getUserName() {

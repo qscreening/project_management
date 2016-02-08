@@ -23,12 +23,12 @@ public class UserProfile implements Serializable {
 		this.userId = userId;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
-	}
-
 	public User getUser() {
 		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public long getPhoneNumber() {
