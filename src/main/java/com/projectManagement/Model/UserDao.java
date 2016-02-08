@@ -21,10 +21,7 @@ public class UserDao{
 	        try {
 			tx = session.getTransaction();
 			tx.begin();
-			//list = (List<User>) session.createQuery("from User").list();
-			Criteria criteria = session.createCriteria(User.class);
-			criteria.setFetchMode("UserProfile", FetchMode.JOIN);
-			list = criteria.list();
+			list = (List<User>) session.createQuery("from User").list();
 			session.save(list);
 			tx.commit();
 	        } catch (Exception e) {

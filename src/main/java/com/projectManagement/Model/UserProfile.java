@@ -12,10 +12,11 @@ public class UserProfile implements Serializable {
     	@GeneratedValue
 	@Column(name="USER_ID")
     	private int userId;
+
 	@Column(name = "PHONE_NUMBER")
 	private long phoneNumber;
 
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne
     	@PrimaryKeyJoinColumn
     	private User user;
 

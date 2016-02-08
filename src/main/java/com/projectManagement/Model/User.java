@@ -12,10 +12,13 @@ public class User implements Serializable {
 	@GeneratedValue
 	@Column(name = "ID")
 	private int id;
+
 	@Column(name = "USER_NAME")
-	private String userName;	
+	private String userName;
+	
 	@Column(name = "EMAIL_ID")
 	private String emailId;
+
 	@Column(name = "PASSWORD")
 	private String password;
 
