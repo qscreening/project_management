@@ -13,6 +13,7 @@ public class User implements Serializable {
 	@Column(name = "ID")
 	private int id;
 	@OneToOne(mappedBy = "User")
+	@PrimaryKeyJoinColumn
 	private UserProfile userProfile = new UserProfile();
 	@Column(name = "USER_NAME")
 	private String userName;	
