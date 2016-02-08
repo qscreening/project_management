@@ -4,9 +4,6 @@ import java.io.Serializable;
 
 import javax.persistence.*;
 
-import org.hibernate.annotations.GenericGenerator;  
-import org.hibernate.annotations.Parameter;
-
 @Entity
 @Table(name = "USER_PROFILES")
 public class UserProfile implements Serializable {
