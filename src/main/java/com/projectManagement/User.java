@@ -8,11 +8,11 @@ import javax.persistence.*;
 @Table(name = "USERS")
 public class User implements Serializable {
    	
-	@Id @GeneratedValue
-	//@OneToOne(mappedBy="user")
-    	//private UserProfile userprofile;	
+	@Id @GeneratedValue	
   	@Column(name = "USER_ID")
   	private int userId;
+	@OneToOne(mappedBy="user")
+    	private UserProfile userprofile;
    	@Column(name = "USER_NAME")
   	private String userName;	
 	@Column(name = "EMAIL_ID")

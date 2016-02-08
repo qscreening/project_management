@@ -8,10 +8,10 @@ import javax.persistence.*;
 @Table(name = "USER_PROFILES")
 public class UserProfile implements Serializable {
    	
-	//@OneToOne
-    	//@JoinColumn(name = "USER_ID")
-	//private User user;
-	@Id
+	@OneToOne
+    	@JoinColumn(name = "USER_ID")
+        private int userId;
+	private User user;
 	@Column(name = "USER_ID")
 	private int userId;
 	@Column(name = "PHONE_NUMBER")
