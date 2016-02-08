@@ -18,7 +18,6 @@ public class User implements Serializable {
 	private String emailId;
 	@Column(name = "PASSWORD")
 	private String password;
-
 	@OneToOne(mappedBy="user")
     	private UserProfile userProfile;
 
@@ -64,6 +63,16 @@ public class User implements Serializable {
 
 	public void setPassword(String password) {
 		this.password = password;
-	}	
+	}
+	
+	public UserProfile getUserProfile() {
+		return userProfile;
+	}
+
+	public void setUserProfile(UserProfile userProfile) {
+		this.userProfile = userProfile;
+	}
+		
+		
 
 }
