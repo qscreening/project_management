@@ -10,30 +10,31 @@ public class UserProfile implements Serializable {
    	
 	@Id
     	@GeneratedValue
-	@Column(name="USER_ID",nullable=false)
+	@Column(name="USER_ID")
     	private int userId;
-
 	@Column(name = "PHONE_NUMBER")
 	private long phoneNumber;
-
 	@OneToOne
     	@PrimaryKeyJoinColumn
     	private User user;
+
+	public void UserProfile() {
+ 
+	}
+ 
+	public void UserProfile(int userId, long phoneNumber, User user) {
+		this.userId = userId;
+		this.phoneNumber = phoneNumber;
+		this.user = user;
+    	}
 	
 	public int getUserId(){
 	   	return userId;
 	}
+
 	public void setUserId( int userId ) {
 		this.userId = userId;
 	}
-
-	/*public void setUser(User user) {
-		this.user = user;
-	}
-
-	public User getUser() {
-		return user;
-	}*/
 
 	public long getPhoneNumber() {
       		return phoneNumber;

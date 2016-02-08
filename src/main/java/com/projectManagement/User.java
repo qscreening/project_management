@@ -19,28 +19,20 @@ public class User implements Serializable {
 	@Column(name = "PASSWORD")
 	private String password;
 
-	@OneToOne(mappedBy="user", cascade=CascadeType.ALL)
+	@OneToOne(mappedBy="user")
     	private UserProfile userProfile;
 
 	public 	User() {
- 
+	
 	}
- 
-	public User(int id, String userName, String emailId, String password, UserProfile userProfile) {
+
+	public void User(int id, String userName, String emailId, String password, UserProfile userProfile) {
 		this.id = id;
 		this.userName = userName;
 		this.emailId = emailId;
 		this.password = password;
 		this.userProfile = userProfile;
     	}
-
-	/*public void setUserProfile(UserProfile userProfile) {
-		this.userProfile = userProfile;
-	}
-
-	public UserProfile getUserProfile() {
-		return userProfile;
-	}*/
 
 	public int getId() {
 		return id;
