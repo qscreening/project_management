@@ -24,8 +24,8 @@ public class UserProfileDao{
 			tx.commit();
 		} catch (Exception e) {
 			if (tx != null) {
-			tx.rollback();
-		}
+				tx.rollback();
+			}
 			e.printStackTrace();
 		} finally {
 			session.close();
