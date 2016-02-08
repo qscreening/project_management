@@ -12,9 +12,6 @@ public class User implements Serializable {
 	@GeneratedValue
 	@Column(name = "ID")
 	private int id;
-	@OneToOne(mappedBy = "User")
-	@PrimaryKeyJoinColumn
-	private UserProfile userProfile = new UserProfile();
 	@Column(name = "USER_NAME")
 	private String userName;	
 	@Column(name = "EMAIL_ID")
@@ -22,10 +19,13 @@ public class User implements Serializable {
 	@Column(name = "PASSWORD")
 	private String password;
 
-	public void User() {
- 
+	@OneToOne(mappedBy="user")
+    	private UserProfile userProfile;
+
+	public 	User() {
+	
 	}
- 
+
 	public void User(int id, String userName, String emailId, String password, UserProfile userProfile) {
 		this.id = id;
 		this.userName = userName;
@@ -40,14 +40,6 @@ public class User implements Serializable {
 
    	public void setId( int id ) {
 		this.id = id;
-	}
-
-	public void setUserProfile(UserProfile userProfile) {
-		this.userProfile = userProfile;
-	}
-
-	public UserProfile getUserProfile() {
-		return userProfile;
 	}
 
 	public String getUserName() {

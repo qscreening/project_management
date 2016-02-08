@@ -8,36 +8,33 @@ import javax.persistence.*;
 @Table(name = "USER_PROFILES")
 public class UserProfile implements Serializable {
    	
-	@JoinColumn(name = "ID")
-	private int userId;
-	@OneToOne
-	private User user = new User();
+	@Id
+    	@GeneratedValue
+	@Column(name="USER_ID")
+    	private int userId;
 	@Column(name = "PHONE_NUMBER")
 	private long phoneNumber;
+
+	@OneToOne
+    	@PrimaryKeyJoinColumn
+    	private User user;
 
 	public void UserProfile() {
  
 	}
  
-	public void UserProfile(int id, long phoneNumber, User user) {
-		this.id = id;
-		this.phoneNumber = password;
+	public void UserProfile(int userId, long phoneNumber, User user) {
+		this.userId = userId;
+		this.phoneNumber = phoneNumber;
 		this.user = user;
     	}
 	
 	public int getUserId(){
 	   	return userId;
 	}
+
 	public void setUserId( int userId ) {
 		this.userId = userId;
-	}
-
-	public User getUser() {
-		return user;
-	}
-
-	public void setUser(User user) {
-		this.user = user;
 	}
 
 	public long getPhoneNumber() {
