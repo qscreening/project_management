@@ -9,6 +9,8 @@ import javax.persistence.*;
 public class UserProfile implements Serializable {
    	
 	@Id
+	@Column(name = "ID")
+	private int id;
     	@GeneratedValue
 	@Column(name="USER_ID")
     	private int userId;
@@ -29,6 +31,14 @@ public class UserProfile implements Serializable {
 		this.phoneNumber = phoneNumber;
 		this.user = user;
     	}
+
+	public int getId() {
+		return id;
+	}
+
+   	public void setId( int id ) {
+		this.id = id;
+	}
 	
 	public int getUserId(){
 	   	return userId;
