@@ -19,11 +19,11 @@ public class TeamDao{
 	        try {
 			tx = session.getTransaction();
 			tx.begin();
-			list = (List<Team>) session.createQuery("from team").list();
+			list = (List<Team>) session.createQuery("from Team").list();
 			session.save(list);
 			tx.commit();
 	        } catch (Exception e) {
-`			if (tx != null) {
+			if (tx != null) {
 				tx.rollback();
 			}
 			e.printStackTrace();

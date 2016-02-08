@@ -19,7 +19,6 @@ public class Project implements Serializable {
 	//@OneToOne
     	//@JoinColumn(name = "USER_ID")
 	//private User user;
-
 	public 	Project() {
  
     	}
@@ -51,6 +50,6 @@ public class Project implements Serializable {
 	}
 	public void setProjectName(String projectName) {
 		this.projectName = projectName;
-	}
+	}	
 
 }
