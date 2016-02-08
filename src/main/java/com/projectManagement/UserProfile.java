@@ -9,12 +9,16 @@ import javax.persistence.*;
 public class UserProfile implements Serializable {
    	
 	@Id
-	@JoinColumn(name = "ID")
-	private int userId;
-	@OneToOne(mappedBy = "User")
-	private User user = new User();
+    	@GeneratedValue
+	@Column(name="USER_ID",nullable=false)
+    	private int userId;
+
 	@Column(name = "PHONE_NUMBER")
 	private long phoneNumber;
+
+	@OneToOne
+    	@PrimaryKeyJoinColumn
+    	private User user;
 	
 	public int getUserId(){
 	   	return userId;
@@ -23,13 +27,13 @@ public class UserProfile implements Serializable {
 		this.userId = userId;
 	}
 
-	public void setUser(User user) {
+	/*public void setUser(User user) {
 		this.user = user;
 	}
 
 	public User getUser() {
 		return user;
-	}
+	}*/
 
 	public long getPhoneNumber() {
       		return phoneNumber;

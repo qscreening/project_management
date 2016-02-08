@@ -12,14 +12,15 @@ public class User implements Serializable {
 	@GeneratedValue
 	@Column(name = "ID")
 	private int id;
-	@OneToOne(mappedBy = "UserProfile")
-	private UserProfile userProfile = new UserProfile();
 	@Column(name = "USER_NAME")
 	private String userName;	
 	@Column(name = "EMAIL_ID")
 	private String emailId;
 	@Column(name = "PASSWORD")
 	private String password;
+
+	@OneToOne(mappedBy="user", cascade=CascadeType.ALL)
+    	private UserProfile userProfile;
 
 	public 	User() {
  
@@ -33,13 +34,13 @@ public class User implements Serializable {
 		this.userProfile = userProfile;
     	}
 
-	public void setUserProfile(UserProfile userProfile) {
+	/*public void setUserProfile(UserProfile userProfile) {
 		this.userProfile = userProfile;
 	}
 
 	public UserProfile getUserProfile() {
 		return userProfile;
-	}
+	}*/
 
 	public int getId() {
 		return id;
