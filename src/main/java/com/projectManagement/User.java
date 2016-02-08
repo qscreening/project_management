@@ -12,7 +12,7 @@ public class User implements Serializable {
 	@GeneratedValue
 	@Column(name = "ID")
 	private int id;
-	@OneToOne(mappedBy = "UserProfile")
+	@OneToOne(mappedBy = "User")
 	private UserProfile userProfile = new UserProfile();
 	@Column(name = "USER_NAME")
 	private String userName;	
@@ -21,11 +21,11 @@ public class User implements Serializable {
 	@Column(name = "PASSWORD")
 	private String password;
 
-	public 	User() {
+	public void User() {
  
 	}
  
-	public User(int id, String userName, String emailId, String password, UserProfile userProfile) {
+	public void User(int id, String userName, String emailId, String password, UserProfile userProfile) {
 		this.id = id;
 		this.userName = userName;
 		this.emailId = emailId;
