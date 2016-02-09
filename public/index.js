@@ -1,14 +1,5 @@
 $(document).ready(function() {
 
-	$("#SignUp").click(function () {
-		var password = $("#SignUpPswd").val();
-		var confirmPassword = $("#confirmPassword").val();
-		var compare = password.localeCompare(confirmPassword);
-		if (compare === 0){
-			alert("Passwords match.");
-		}
-	});
-				
 	$("#signIn").click(function() {
 		var emailId = $("#userName").val();
 		var password = $("password").val();
@@ -25,6 +16,15 @@ $(document).ready(function() {
 			alert('Login successful');
 		}else{
 			alert("Must be between 5 and 15");
+		}
+	});
+
+	$("#signUp").click(function () {
+		var password = $("#SignUpPswd").val();
+		var confirmPassword = $("#confirmPassword").val();
+		var compare = password.localeCompare(confirmPassword);
+		if (compare === 0){
+			alert("Passwords match.");
 		}
 	});
 	
