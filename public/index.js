@@ -1,5 +1,5 @@
 function validate() {
-         var emailID = document.myForm.email.value;
+         var emailID = document.signInForm.email.value;
          var password = document.getElementById("password").value;
          atpos = emailID.indexOf("@");
          dotpos = emailID.lastIndexOf(".");
