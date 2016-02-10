@@ -8,25 +8,22 @@ import org.hibernate.FetchMode;
 
 public class SignUpDao{
 
-	public void signUpUserDetails(User user){  
+	public boolean signUpUserDetails(String fName, String email, String password){  
  		Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
 		Transaction tx = null;
 		try {
 			tx = session.getTransaction();
 			tx.begin();
-			
-			String fName = request.getParameter("fullName");
-			String pword = request.getParameter("password");
-			String cPword = request.getParameter("confirmPassword");
 
 			User user = new User();
 			user.setUserName(fName);
-			user.setPassword(pword);
-			user.setPassword(cPword);
+			user.setEmailId(email);
+			user.setPassword(password);
 			
 			session.save(user);
 			tx.commit();
+			return true;
 	        } catch (Exception e) {
 			if (tx != null) {
 				tx.rollback();
@@ -34,5 +31,8 @@ public class SignUpDao{
 			e.printStackTrace();
 	        } finally {
 			session.close();
- 	}  
+ 		}
+		return false;
+	}
+
 }
