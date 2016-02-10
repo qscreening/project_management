@@ -40,7 +40,7 @@ $(document).ready(function() {
 		var confirmPassword = $("#confirmPassword").val();
 		var compare = password.localeCompare(confirmPassword);
 		if (compare === 0){
-			alert("Passwords match.");
+			alert("Passwords matched.");
 		}
 	});
 	
