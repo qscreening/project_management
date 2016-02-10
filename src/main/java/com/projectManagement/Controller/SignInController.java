@@ -12,12 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 public class SignInController {
 
 	@RequestMapping(value ="/signin", method = RequestMethod.POST)
-	public String project(HttpServletRequest request, HttpServletResponse response) throws Exception {
+	public boolean project(HttpServletRequest request, HttpServletResponse response) throws Exception {
            	System.out.println("*******enter to controller******");
-           	String user_Name=request.getParameter("userName");
+           	String email=request.getParameter("userName");
 		String password=request.getParameter("Password");
-		System.out.println(password);
-		return password;
+		SignInDao signInDao = new SignInDao();
+		boolean result = signInDao.signInUserDetails(email, password);
+		return result;
 	}
 
 }

@@ -26,7 +26,13 @@ $(document).ready(function() {
 			},
 			method: "post",
 			success: function(result) {
-				console.log(result);
+				if(result){
+					window.location.href = "home.html";
+					alert("logged in");
+				}
+				else{
+					alert("user not exist");
+				}
 			}, error:function() {
 				alert("Error!!!")
 			}
