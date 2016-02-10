@@ -3,7 +3,7 @@ $(document).ready(function() {
 	$("#signIn").click(function() {
 		var emailId = $("#userId").val();
 		var password = $("#password").val();
-		var passwordLength = $("password").length;
+		var passwordLength = $("#password").length;
 		var atpos = emailId.indexOf("@");
 		var dotpos = emailId.lastIndexOf(".");
 		if (atpos < 1 || ( dotpos - atpos < 6 )) {
