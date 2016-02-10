@@ -8,7 +8,8 @@ import javax.persistence.*;
 @Table(name = "TEAM_MEMBERS")
 public class TeamMember {
    	
-	@Id @GeneratedValue
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
   	@Column(name = "ID")
   	private int id;	
 	@OneToMany

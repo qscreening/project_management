@@ -10,7 +10,8 @@ import javax.persistence.*;
 @Table(name = "PROJECT_MEMBERS")
 public class ProjectMember implements Serializable {
    	
-	@Id @GeneratedValue
+	@Id 
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
   	@Column(name = "ID")
   	private int id;	
 	//@OneToMany
