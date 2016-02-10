@@ -28,10 +28,10 @@ $(document).ready(function() {
 			success: function(result) {
 				if(result){
 					window.location.href = "home.html";
-					alert("logged in");
+					alert("Successfully Logged in");
 				}
 				else{
-					alert("user not exist");
+					alert("Invalid User!");
 				}
 			}, error:function() {
 				alert("Error!!!")
