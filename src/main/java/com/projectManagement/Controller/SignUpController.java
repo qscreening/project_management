@@ -1,28 +1,29 @@
 package com.projectManagement;
 
-import java.util.List;
-import java.util.ArrayList;
-
-import org.hibernate.Session;
-import org.hibernate.Query;
-
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @RestController
 public class SignUpController {
 	@RequestMapping(value = "/SignUpController", method = RequestMethod.POST)
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		String userName = request.getParameter("fullName");
+		String emailId = request.getParameter("emailId");
+		String password = request.getParameter("SignUpPswd");
 
 		SignUpDao signUpDao = new SignUpDao();
-		int status = signUpDao.signUpUserDetails(user);
+		boolean status = signUpDao.signUpUserDetails(userName, emailId, password);
 		
-		if (status != 0) {
-			response.sendRedirect("insertSuccess.html");
+		if (status) {
+			request.getRequestDispatcher("home.html").forward(request, response);
 		} else {
-
-			response.sendRedirect("insertFailure.html");
+			request.getRequestDispatcher("index.html").forward(request, response);
 		}
+	}
+
 }
-
-
