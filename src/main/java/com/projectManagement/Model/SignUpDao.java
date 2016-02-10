@@ -8,16 +8,16 @@ import org.hibernate.FetchMode;
 
 public class SignUpDao{
 
-	public boolean signUpUserDetails(String fName, String email, String password){  
+	public boolean signUpUserDetails(String fullName, String email, String password){  
  		Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
 		Transaction tx = null;
 		try {
 			tx = session.getTransaction();
 			tx.begin();
-
+			session.createQuery("from User");
 			User user = new User();
-			user.setUserName(fName);
+			user.setUserName(fullName);
 			user.setEmailId(email);
 			user.setPassword(password);
 			

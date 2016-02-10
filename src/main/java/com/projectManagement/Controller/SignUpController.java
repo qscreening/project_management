@@ -10,20 +10,23 @@ import javax.servlet.http.HttpServletResponse;
 
 @RestController
 public class SignUpController {
+
 	@RequestMapping(value = "/SignUpController", method = RequestMethod.POST)
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String userName = request.getParameter("fullName");
+
+		String fullName = request.getParameter("fullName");
 		String emailId = request.getParameter("emailId");
 		String password = request.getParameter("SignUpPswd");
 
 		SignUpDao signUpDao = new SignUpDao();
-		boolean status = signUpDao.signUpUserDetails(userName, emailId, password);
+		boolean status = signUpDao.signUpUserDetails(fullName, emailId, password);
 		
 		if (status) {
 			request.getRequestDispatcher("home.html").forward(request, response);
 		} else {
 			request.getRequestDispatcher("index.html").forward(request, response);
 		}
+
 	}
 
 }
