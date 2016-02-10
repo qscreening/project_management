@@ -17,6 +17,15 @@ $(document).ready(function() {
 		}else{
 			alert("Must be between 5 and 15");
 		}
+		$.ajax({
+			url: "signin?userName=" + emailId + "&password=" + password, 
+			method: "post",
+			success: function(result) {
+				console.log(result);
+			}, error:function() {
+				alert("Error!!!")
+			}
+		});
 	});
 
 	$("#signUp").click(function () {
@@ -35,42 +44,4 @@ $(document).ready(function() {
 		}
 	});
 	
-});
-
-
-
-
-
-var text=function(){
-  var userName="";
-  var Password="";
-  $("#userId").on("keyup", function(){
-  	userName = $("#userId").val();
-  
-   });	
-          
-  $("#password").on("keyup", function(){
-       Password=$("#password").val();
-       
-   });
-   $("#signIn").click(function(){
-	alert(userName);	
-	alert(Password);	
-      
-   	  $.ajax({
-	      url: "signin?userName="+userName+"&password="+Password, 
-	      method: "post",
-	      success: function(result){
-	      console.log(result);
-	    },error:function(){
-	   alert("error occured")
-	   }
-     });
-});
- 
-}	
-       
-
-$(document).ready(function(){
-    text();
 });
