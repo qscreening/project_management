@@ -7,11 +7,11 @@ $(document).ready(function() {
 		var atpos = emailId.indexOf("@");
 		var dotpos = emailId.lastIndexOf(".");
 		if (atpos < 1 || ( dotpos - atpos < 6 )) {
-			alert("Please enter correct email ID (abcdef@xyz.com)");
+			alert("Please, Enter a valid email ID (abcdef@xyz.com)");
 			$("#userId").focus();
 		}
 		if (password === null || password === "") {
-			alert("Please enter the password.");
+			alert("Please enter the password (Min 5 & max 15 Charaters)");
 		}
 		if (passwordLength >= 5 && passwordLength <= 15) {
 			alert('Login successful');
