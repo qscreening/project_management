@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Project implements Serializable {
    	
 	@Id 
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "PROJECT_ID")
   	private int projectId;	
 	@Column(name = "PROJECT_NAME")
