@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class User implements Serializable {
    	
 	@Id 
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private int id;
 

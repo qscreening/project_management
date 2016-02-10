@@ -13,10 +13,9 @@ public class SignUpController {
 
 	@RequestMapping(value = "/SignUpController", method = RequestMethod.POST)
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws Exception {
-
-		String fullName = request.getParameter("fullName");
-		String emailId = request.getParameter("emailId");
-		String password = request.getParameter("SignUpPswd");
+		String userName = request.getParameter("fullName");
+		String emailId = request.getParameter("email");
+		String password = request.getParameter("password");
 
 		SignUpDao signUpDao = new SignUpDao();
 		boolean status = signUpDao.signUpUserDetails(fullName, emailId, password);
