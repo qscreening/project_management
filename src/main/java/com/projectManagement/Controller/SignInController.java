@@ -15,10 +15,9 @@ public class SignInController {
 	public String project(HttpServletRequest request, HttpServletResponse response) throws Exception {
            	System.out.println("*******enter to controller******");
            	String user_Name=request.getParameter("userName");
-		String Password=request.getParameter("password");
-		System.out.println(Password);
-		String str="priyanka";
-		return Password;
+		String password=request.getParameter("Password");
+		System.out.println(password);
+		return password;
 	}
 
 }
