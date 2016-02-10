@@ -17,6 +17,15 @@ $(document).ready(function() {
 		}else{
 			alert("Must be between 5 and 15");
 		}
+		$.ajax({
+			url: "signin?userName=" + emailId + "&password=" + password, 
+			method: "post",
+			success: function(result) {
+				console.log(result);
+			}, error:function() {
+				alert("Error!!!")
+			}
+		});
 	});
 
 	$("#signUp").click(function () {
