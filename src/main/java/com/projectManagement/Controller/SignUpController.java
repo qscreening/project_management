@@ -11,20 +11,17 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class SignUpController {
 
-	@RequestMapping(value = "/SignUpController", method = RequestMethod.POST)
-	public void doPost(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		String fullName = request.getParameter("fullName");
+	@RequestMapping(value = "/SignUp", method = RequestMethod.POST)
+	public boolean signUp(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+		String fullName = request.getParameter("fName");
 		String emailId = request.getParameter("email");
-		String password = request.getParameter("password");
+		String password = request.getParameter("pswd");
 
 		SignUpDao signUpDao = new SignUpDao();
 		boolean status = signUpDao.signUpUserDetails(fullName, emailId, password);
-		
-		if (status) {
-			request.getRequestDispatcher("home.html").forward(request, response);
-		} else {
-			request.getRequestDispatcher("index.html").forward(request, response);
-		}
+
+		return status;
 
 	}
 
