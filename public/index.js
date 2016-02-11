@@ -21,11 +21,12 @@ $(document).ready(function() {
 		$.ajax({
 			url: "signin", 
 			data: {
-				userName: emailId,
+				email: emailId,
 				Password: password        
 			},
 			method: "post",
 			success: function(result) {
+			     console.log(result);
 				if(result){
 					window.location.href = "home.html";
 					alert("logged in");
