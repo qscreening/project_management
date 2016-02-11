@@ -44,12 +44,19 @@ $(document).ready(function() {
 
 	});
 
+	var password = $("#SignUpPswd").val();
+	var confirmPassword = $("#confirmPassword").val();
+	$("#confirmPassword").keydown(function(){
+		var compare = password.localeCompare(confirmPassword);
+		if (compare === 0){
+			$("span").addClass("glyphicons glyphicons-ok form-control-feedback");
+		}
+	});
+
 	$("#signUpForm").submit(function(e) {
 
 		var fullName = $("#fullName").val();
 		var emailId = $("#emailId").val();
-		var password = $("#SignUpPswd").val();
-		var confirmPassword = $("#confirmPassword").val();
 
 		atPos = emailId.indexOf("@");
 		var afterAt = emailId.split("@");
@@ -59,11 +66,6 @@ $(document).ready(function() {
 			alert("Please, Enter a valid email ID (abcdef@xyz.com)");
 		}
 		
-		var compare = password.localeCompare(confirmPassword);
-		if (compare === 0){
-			alert("Passwords matched.");
-		}
-
 		$.ajax({
 			url: "/SignUp", 
 			data: {
