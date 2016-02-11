@@ -1,7 +1,7 @@
-$(document).ready(function() {
+var atPos = 0;
+var dotPos = 0;
 
-	var atPos = 0;
-	var dotPos = 0;
+$(document).ready(function() {
 
 	$("#signInForm").submit(function(e) {
 
@@ -45,12 +45,20 @@ $(document).ready(function() {
 
 	});
 
+	var password = $("#SignUpPswd").val();
+	var confirmPassword = $("#confirmPassword").val();
+	$("#confirmPassword").keydown(function(){
+		var compare = password.localeCompare(confirmPassword);
+		if (compare === 0){
+			$("span").addClass("glyphicons glyphicons-ok form-control-feedback");
+		}
+	});
+
 	$("#signUpForm").submit(function(e) {
 
 		var fullName = $("#fullName").val();
 		var emailId = $("#emailId").val();
-		var password = $("#SignUpPswd").val();
-		var confirmPassword = $("#confirmPassword").val();
+		password = $("#SignUpPswd").val();
 
 		atPos = emailId.indexOf("@");
 		var afterAt = emailId.split("@");
@@ -60,11 +68,6 @@ $(document).ready(function() {
 			alert("Please, Enter a valid email ID (abcdef@xyz.com)");
 		}
 		
-		var compare = password.localeCompare(confirmPassword);
-		if (compare === 0){
-			alert("Passwords matched.");
-		}
-
 		$.ajax({
 			url: "/SignUp", 
 			data: {
@@ -76,10 +79,9 @@ $(document).ready(function() {
 			success: function(status) {
 				if(status){
 					window.location.href = "home.html";
-					alert("logged in");
 				}
 				else{
-					alert("user not exist");
+					alert("Invalid User ID or Password!!");
 				}
 			}, error:function() {
 				alert("Error!!!")

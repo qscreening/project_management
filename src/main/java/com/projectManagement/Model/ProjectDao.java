@@ -10,12 +10,12 @@ import org.hibernate.Query;
 public class ProjectDao{
 
 	public List<Project> getListOfProjects(){
+
 	        List<Project> list = new ArrayList<Project>();
-	
 	        Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
-	
 	        Transaction tx = null;       
+
 	        try {
 			tx = session.getTransaction();
 			tx.begin();
@@ -27,10 +27,11 @@ public class ProjectDao{
 				tx.rollback();
 			}
 			e.printStackTrace();
-	        } finally {
+		} finally {
 			session.close();
-	        }
-	        return list;
+		}
+
+		return list;
 	}
 
 }

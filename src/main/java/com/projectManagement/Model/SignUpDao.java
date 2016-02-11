@@ -9,9 +9,11 @@ import org.hibernate.FetchMode;
 public class SignUpDao{
 
 	public boolean signUpUserDetails(String fullName, String email, String password){  
+
  		Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
 		Transaction tx = null;
+
 		try {
 			tx = session.getTransaction();
 			tx.begin();
@@ -32,6 +34,7 @@ public class SignUpDao{
 	        } finally {
 			session.close();
  		}
+
 		return false;
 	}
 }

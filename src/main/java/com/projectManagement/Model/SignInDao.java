@@ -5,18 +5,21 @@ import org.hibernate.Transaction;
 import org.hibernate.Query;
 import org.hibernate.Criteria;
 import org.hibernate.FetchMode;
+
 import java.util.List;
 import java.util.ArrayList;
 
 
 public class SignInDao{
 
-	public boolean signInUserDetails( String email, String password){  
+	public boolean signInUserDetails( String email, String password){
+
 		List<User> list = new ArrayList<User>();
  		Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
 		Transaction tx = null;
 		User user = new User();
+
 		try {
 			tx = session.getTransaction();
 			tx.begin();
@@ -39,7 +42,9 @@ public class SignInDao{
 	        } finally {
 			session.close();
  		}
+
 		return false;
+
 	}
 
 }

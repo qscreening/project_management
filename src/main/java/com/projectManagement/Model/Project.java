@@ -11,14 +11,18 @@ public class Project implements Serializable {
 	@Id 
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "PROJECT_ID")
-  	private int projectId;	
+	private int projectId;
+
 	@Column(name = "PROJECT_NAME")
 	private String projectName;
+
 	@Column(name = "OWNER")
 	private int owner;
+
 	//@OneToOne
     	//@JoinColumn(name = "USER_ID")
 	//private User user;
+
 	public 	Project() {
  
     	}

@@ -13,12 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserProfileController {
+
 	@RequestMapping("/UserProfileController")
 	public List<UserProfile> management() {
+
 		UserProfileDao userProfiles = new UserProfileDao();
 		List list = userProfiles.getListOfUserProfiles();
+
 		return list;
+
 	}
+
 }
-
-

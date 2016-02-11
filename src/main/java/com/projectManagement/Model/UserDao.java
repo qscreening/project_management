@@ -12,12 +12,12 @@ import org.hibernate.FetchMode;
 public class UserDao{
 
 	public List<User> getListOfUsers(){
+
 		List<User> list = new ArrayList<User>();
-	
-	        Session session = HibernateSessionManager.getSessionFactory().openSession();
+		Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
-	
-	        Transaction tx = null;       
+		Transaction tx = null;       
+
 	        try {
 			tx = session.getTransaction();
 			tx.begin();
@@ -32,7 +32,9 @@ public class UserDao{
 	        } finally {
 			session.close();
 	        }
+
 	        return list;
+
 	}
 
 }

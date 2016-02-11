@@ -13,12 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class ProjectMemberController {
+
 	@RequestMapping("/ProjectMemberController")
 	public List<ProjectMember> management() {
+
 		ProjectMemberDao projectMembers = new ProjectMemberDao();
 		List list = projectMembers.getListOfProjectMembers();
+
 		return list;
+
 	}
+
 }
-
-
