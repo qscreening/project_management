@@ -10,12 +10,12 @@ import org.hibernate.Query;
 public class UserProfileDao{
 
 	public List<UserProfile> getListOfUserProfiles(){
-		List<UserProfile> list = new ArrayList<UserProfile>();
 
+		List<UserProfile> list = new ArrayList<UserProfile>();
 		Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
-
 		Transaction tx = null;       
+
 		try {
 			tx = session.getTransaction();
 			tx.begin();
@@ -30,7 +30,9 @@ public class UserProfileDao{
 		} finally {
 			session.close();
 		}
+
 		return list;
+
 	}
 
 }

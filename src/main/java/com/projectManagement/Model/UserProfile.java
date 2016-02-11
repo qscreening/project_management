@@ -11,21 +11,22 @@ public class UserProfile implements Serializable {
 	@Id
 	@Column(name = "ID")
 	private int id;
-    	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="USER_ID")
-    	private int userId;
+	private int userId;
 
 	@Column(name = "PHONE_NUMBER")
 	private long phoneNumber;
 
 	@OneToOne
-    	@PrimaryKeyJoinColumn
-    	private User user;
+	@PrimaryKeyJoinColumn
+	private User user;
 
 	public void UserProfile() {
- 
+
 	}
- 
+
 	public void UserProfile(int userId, long phoneNumber, User user) {
 		this.userId = userId;
 		this.phoneNumber = phoneNumber;

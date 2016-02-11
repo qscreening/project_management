@@ -10,12 +10,12 @@ import org.hibernate.Query;
 public class TeamMemberDao{
 
 	public List<TeamMember> getListOfTeamMembers(){
+
 		List<TeamMember> list = new ArrayList<TeamMember>();
-	
-	        Session session = HibernateSessionManager.getSessionFactory().openSession();
+		Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
-	
-	        Transaction tx = null;       
+		Transaction tx = null;       
+
 	        try {
 			tx = session.getTransaction();
 			tx.begin();
@@ -30,7 +30,9 @@ public class TeamMemberDao{
 	        } finally {
 			session.close();
 	        }
+
 	        return list;
+
 	}
 
 }

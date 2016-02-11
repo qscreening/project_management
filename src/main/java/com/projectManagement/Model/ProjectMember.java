@@ -1,7 +1,6 @@
 package com.projectManagement;
 
 import java.util.List;
-
 import java.io.Serializable;
 
 import javax.persistence.*;
@@ -14,14 +13,18 @@ public class ProjectMember implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
   	@Column(name = "ID")
   	private int id;	
+
 	//@OneToMany
     	@Column(name = "PROJECT_ID")
 	private int projectId;	
+
 	@Column(name = "MEMBER_ID")
 	private int memberId;
+
 	//@OneToOne
     	//@JoinColumn(name = "USER_ID")
 	//private User user;
+
 	@Column(name = "OWNER")
 	private boolean owner;
 

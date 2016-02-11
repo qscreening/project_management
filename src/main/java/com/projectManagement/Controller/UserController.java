@@ -12,12 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class UserController {
+
 	@RequestMapping("/UserController")
 	public List<User> management() {
+
 		UserDao users = new UserDao();
 		List list = users.getListOfUsers();
+
 		return list;
+
 	}
+
 }
-
-
