@@ -75,10 +75,9 @@ $(document).ready(function() {
 			success: function(status) {
 				if(status){
 					window.location.href = "home.html";
-					alert("logged in");
 				}
 				else{
-					alert("user not exist");
+					alert("Invalid User ID or Password!!");
 				}
 			}, error:function() {
 				alert("Error!!!")
