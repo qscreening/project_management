@@ -1,7 +1,7 @@
-$(document).ready(function() {
+var atPos = 0;
+var dotPos = 0;
 
-	var atPos = 0;
-	var dotPos = 0;
+$(document).ready(function() {
 
 	$("#signInForm").submit(function(e) {
 
