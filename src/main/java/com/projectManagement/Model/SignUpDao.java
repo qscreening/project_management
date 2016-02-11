@@ -1,8 +1,5 @@
 package com.projectManagement;
 
-import java.util.List;
-import java.util.ArrayList;
-
 import org.hibernate.Session;  
 import org.hibernate.Transaction;  
 import org.hibernate.Query;
@@ -15,19 +12,11 @@ public class SignUpDao{
  		Session session = HibernateSessionManager.getSessionFactory().openSession();
 		session.beginTransaction();
 		Transaction tx = null;
-		List<User> list = new ArrayList<User>();
 		try {
 			tx = session.getTransaction();
 			tx.begin();
-			list = session.createQuery("from User").list(); 
 
 			User user = new User();
-			for(int i=0; i < list.size(); i++){
-				user = (User)list.get(i);
-				if(user.getEmailId().equals(email)){
-					return false;
-				}
-			}
 			user.setUserName(fullName);
 			user.setEmailId(email);
 			user.setPassword(password);

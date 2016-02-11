@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 @RestController
 public class SignInController {
 
-	@RequestMapping(value ="/signin", method = RequestMethod.POST)
+	@RequestMapping(value ="/SignIn", method = RequestMethod.POST)
 	public boolean project(HttpServletRequest request, HttpServletResponse response) throws Exception {
            	System.out.println("*******enter to controller******");
            	String email=request.getParameter("userName");
