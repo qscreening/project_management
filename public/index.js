@@ -58,6 +58,7 @@ $(document).ready(function() {
 
 		var fullName = $("#fullName").val();
 		var emailId = $("#emailId").val();
+		password = $("#SignUpPswd").val();
 
 		atPos = emailId.indexOf("@");
 		var afterAt = emailId.split("@");
