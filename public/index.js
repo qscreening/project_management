@@ -29,6 +29,7 @@ $(document).ready(function() {
 			},
 			method: "post",
 			success: function(result) {
+			     console.log(result);
 				if(result){
 					window.location.href = "home.html";
 				}

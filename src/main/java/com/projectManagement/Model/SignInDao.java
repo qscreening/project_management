@@ -21,9 +21,16 @@ public class SignInDao{
 			tx = session.getTransaction();
 			tx.begin();
 			list =  session.createQuery("from User").list();
-			session.save(user);
+
+			for (int i = 0; i < list.size(); i++){
+	 		 	user = (User)list.get(i);
+	 		 	if(user.getEmailId().equals(email) && user.getPassword().equals(password)){
+	 		 		return true;
+	 		 	}
+	 		 }	
+
+ 			session.save(user);
 			tx.commit();
-			return true;
 	        } catch (Exception e) {
 			if (tx != null) {
 				tx.rollback();
@@ -32,12 +39,6 @@ public class SignInDao{
 	        } finally {
 			session.close();
  		}
- 		 for (int i = 0; i < list.size(); i++){
- 		 	user = (User)list.get(i);
- 		 	if(user.getEmailId().equals(email) && user.getPassword().equals(password)){
- 		 		return true;
- 		 	}
- 		 }	
 		return false;
 	}
 
