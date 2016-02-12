@@ -77,11 +77,11 @@ $(document).ready(function() {
 			},
 			method: "post",
 			success: function(status) {
-				if(status){
-					window.location.href = "home.html";
+				if(status === 0){
+					alert("Invalid User ID or Password!!");
 				}
 				else{
-					alert("Invalid User ID or Password!!");
+					window.location.href = "home.html";
 				}
 			}, error:function() {
 				alert("Error!!!")
