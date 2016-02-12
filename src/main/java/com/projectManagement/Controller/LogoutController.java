@@ -17,18 +17,18 @@ import java.io.PrintWriter;
 @RestController
 public class LogoutController extends HttpServlet {
 
-@RequestMapping(value ="/logout", method = RequestMethod.POST)
+	@RequestMapping(value = "/logout", method = RequestMethod.POST)
 	public boolean project1(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
-		System.out.println("=====controller======");
+
 		HttpSession session = request.getSession(false); 
-		if(session!=null) 
-		{
-		session.invalidate();
-		System.out.println(session.getId());
-		response.sendRedirect( "index.html");
-		return true;
+		if(session != null) {
+			session.invalidate();
+			response.sendRedirect("index.html");
+			return true;
 		}
+
 		return false;
-		 
+
 	}
-}	
+
+}
