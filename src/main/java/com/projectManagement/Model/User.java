@@ -1,6 +1,7 @@
 package com.projectManagement;
-
+import java.util.Set;
 import java.io.Serializable;
+import java.io.*;
 
 import javax.persistence.*;
 
@@ -24,9 +25,12 @@ public class User implements Serializable {
 
 	@OneToOne(mappedBy="user")
     	private UserProfile userProfile;
+    	
+    	@OneToMany(mappedBy ="user1", fetch = FetchType.EAGER)
+    	private Set<Project> project;
+    	
 
 	public 	User() {
-	
 	}
 
 	public void User(int id, String userName, String emailId, String password, UserProfile userProfile) {
@@ -76,5 +80,11 @@ public class User implements Serializable {
 	public void setUserProfile(UserProfile userProfile) {
 		this.userProfile = userProfile;
 	}
+	public Set<Project> getProject(){
+	 	return project;
+	}
+	public void setProject(Set<Project> project){
+		this.project = project;
+	}	
 		
 }
