@@ -28,13 +28,12 @@ $(document).ready(function() {
 				Password: password        
 			},
 			method: "post",
-			success: function(result) {
-			     console.log(result);
-				if(result){
-					window.location.href = "home.html";
+			success: function(curUser) {
+				if(curUser === 0){
+					alert("Invalid User ID or Password!!");
 				}
 				else{
-					alert("Invalid User ID or Password!!");
+					window.location.href = "home.html";
 				}
 			}, error:function() {
 				alert("Error!!!")
@@ -76,9 +75,9 @@ $(document).ready(function() {
 				pswd: password        
 			},
 			method: "post",
-			success: function(status) {
-				if(status === 0){
-					alert("Invalid User ID or Password!!");
+			success: function(CurrentUser) {
+				if(CurrentUser === 0){
+					alert("Invalid Details");
 				}
 				else{
 					window.location.href = "home.html";
