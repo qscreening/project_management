@@ -20,18 +20,21 @@ public class SignInController {
 		String emailId = request.getParameter("userId");
 		String password = request.getParameter("Password");
 		List<User> list = new ArrayList<User>();
+		int curUser = 0;
 
-		User user = new User();
 		SignInDao signInDao = new SignInDao();
-		boolean result = signInDao.signInUserDetails(emailId, password);
+		boolean isValid = signInDao.signInUserDetails(emailId, password);
 
-		UserDao dao = new UserDao();
-		list = dao.getUserObj(emailId);
+		if(isValid){
+			UserDao dao = new UserDao();
+			list = dao.getUserObj(emailId);
 
-		Authorization auth = new Authorization();
-		int curUser = auth.checkOrCreateSession(request, list);
+			Authorization auth = new Authorization();
+			curUser = auth.checkOrCreateSession(request, list);
+		}
 
 		return curUser;
+
 	}
 
 }
