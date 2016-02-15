@@ -1,7 +1,9 @@
 package com.projectManagement;
 
-import java.util.List;
+import java.util.Set;
 import java.io.Serializable;
+import java.io.*;
+
 
 import javax.persistence.*;
 
@@ -14,19 +16,19 @@ public class ProjectMember implements Serializable {
   	@Column(name = "ID")
   	private int id;	
 
-	//@OneToMany
     	@Column(name = "PROJECT_ID")
 	private int projectId;	
 
 	@Column(name = "MEMBER_ID")
 	private int memberId;
 
-	//@OneToOne
-    	//@JoinColumn(name = "USER_ID")
-	//private User user;
-
 	@Column(name = "OWNER")
 	private boolean owner;
+	
+	@ManyToOne
+	@JoinColumn(name="ID", insertable=false , updatable=false)
+	private Project project;
+	
 
 	public 	ProjectMember() {
  
@@ -70,5 +72,12 @@ public class ProjectMember implements Serializable {
    	public void setOwner( boolean owner ) {
       		this.owner = owner;
    	}
+   	
+   	/*public Project getProject(){
+   		return project;
+   	}
+   	public void setProject( Project project){
+   		this.project = project;
+   	}*/
 	
 }
