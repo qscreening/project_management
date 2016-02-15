@@ -5,6 +5,21 @@
 		<title>PMS Login page</title>
 		<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
 		<link href="/css/bootstrap-theme.min.css" rel="stylesheet" media="screen">
+		<script>
+			$.ajax({
+				url: "/CurrentUser",
+				method: "GET",
+				success: function(res, status) {
+					alert();
+					if(res != 401) {
+						window.location.href = "home.html";
+					}
+				},
+				error: function(){
+					
+				}
+			});
+		</script>
 	</head>
 	<body>
 		<div id="container">
