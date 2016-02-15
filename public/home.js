@@ -12,9 +12,8 @@ $(document).ready(function(){
 					window.location.href="home.html";
 				}
 			},error:function(){
-						alert("error occured")
-  					}	
+				alert("error occured")
+  			}	
 		});
 	});
 });
-    
