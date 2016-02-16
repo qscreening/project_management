@@ -1,6 +1,5 @@
 $(document).ready(function(){
 	$("#logout").click(function(){
-		alert("enter into + button block");
 		$.ajax({
 			url:"/logout",
 			method:"post",
@@ -12,7 +11,7 @@ $(document).ready(function(){
 					window.location.href="home.html";
 				}
 			},error:function(){
-				alert("error occured")
+				alert("Error occured")
   			}	
 		});
 	});
